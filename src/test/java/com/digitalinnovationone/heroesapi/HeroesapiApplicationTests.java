@@ -17,7 +17,7 @@ import static com.digitalinnovationone.heroesapi.constants.HeroesConstant.HEROES
 @DirtiesContext
 @AutoConfigureWebTestClient
 @SpringBootTest
-class HeroesApiApplicationTests {
+public class HeroesapiApplicationTests {
 
 	@Autowired
 	WebTestClient webTestClient;
@@ -27,7 +27,7 @@ class HeroesApiApplicationTests {
 
 	@Test
 	public void getOneHeroeById(){
-		webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"10")
+		webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"2")
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody();
@@ -45,7 +45,7 @@ class HeroesApiApplicationTests {
 
 	@Test
 	public void deleteHero(){
-		webTestClient.delete().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"1")
+		webTestClient.delete().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"2")
 				.accept(MediaType.APPLICATION_JSON)
 				.exchange()
 				.expectStatus().isNotFound()
