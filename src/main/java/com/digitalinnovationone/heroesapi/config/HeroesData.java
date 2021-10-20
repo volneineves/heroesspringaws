@@ -19,7 +19,7 @@ public class HeroesData {
                 .build();
         DynamoDB dynamoDB = new DynamoDB(client);
 
-        Table table = dynamoDB.getTable("Heroes_Api_Table");
+        Table table = dynamoDB.getTable("Heroes_Table_Demo");
 
         Item hero = new Item()
                 .withPrimaryKey("id", "2")
